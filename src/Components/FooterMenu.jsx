@@ -1,6 +1,6 @@
 import { GoHome } from "react-icons/go";
 import { BiMessageSquare } from "react-icons/bi";
-import { FiSearch } from "react-icons/fi";
+import { CiGlobe } from "react-icons/ci";
 import { RiNotification2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const FooterMenu = () => {
         <GoHome size={25} />
       </Link>
       <Link to="/explore">
-        <FiSearch size={25} />
+        <CiGlobe size={25} />
       </Link>
       <Link to="/messages">
         <BiMessageSquare size={25} />

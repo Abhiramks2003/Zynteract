@@ -52,8 +52,8 @@ const Messages = () => {
     },
   ];
   return (
-    <Card className="mt-3 w-full md:w-80 h-screen md:h-full flex flex-col flex-shrink-0">
-      <CardBody>
+    <Card className="mt-3 w-full md:w-80 h-screen md:h-[85vh] flex flex-col flex-shrink-0">
+      <CardBody>  
         <div className="flex justify-between">
           <Typography variant="h5" color="blue-gray" className="mb-2">
             Messages

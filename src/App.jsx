@@ -6,6 +6,7 @@ import Activity from "./Components/Activity";
 import FooterMenu from "./Components/FooterMenu";
 import Messages from "./Components/Messages";
 import Explore from "./Components/Explore";
+import Profile from "./Profile";
 function App() {
   return (
     <div className="m-0 p-0">
@@ -13,6 +14,7 @@ function App() {
         <TopMenu />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/activity" element={<Activity />} />
           <Route path="/messages" element={<Messages />} />
