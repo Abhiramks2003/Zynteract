@@ -8,7 +8,7 @@ import Messages from "./Components/Messages";
 import Explore from "./Components/Explore";
 function App() {
   return (
-    <div>
+    <div className="m-0 p-0">
       <Router>
         <TopMenu />
         <Routes>
