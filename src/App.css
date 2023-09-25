@@ -1,0 +1,15 @@
+.hide-scroll {
+    overflow-x: scroll;
+}
+
+.scroll-post {
+    overflow-y: scroll;
+}
+
+.hide-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-post::-webkit-scrollbar {
+    display: none;
+}
