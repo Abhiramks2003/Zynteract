@@ -6,9 +6,106 @@ import {
   Avatar,
   Chip,
   Button,
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
 } from "@material-tailwind/react";
 
 export default function Profile() {
+  const data = [
+    {
+      label: "HTML",
+      value: "html",
+      desc: (
+        <Card className="w-full">
+          <CardBody>
+            <Typography variant="h5" color="blue-gray" className="mb-2">
+              UI/UX Review Check
+            </Typography>
+            <Typography>
+              The place is close to Barceloneta Beach and bus stop just 2 min by
+              walk and near to &quot;Naviglio&quot; where you can enjoy the main
+              night life in Barcelona.
+            </Typography>
+          </CardBody>
+        </Card>
+      ),
+    },
+    {
+      label: "React",
+      value: "react",
+      desc: (
+        <Card className="w-full">
+          <CardBody>
+            <Typography variant="h5" color="blue-gray" className="mb-2">
+              UI/UX Review Check
+            </Typography>
+            <Typography>
+              The place is close to Barceloneta Beach and bus stop just 2 min by
+              walk and near to &quot;Naviglio&quot; where you can enjoy the main
+              night life in Barcelona.
+            </Typography>
+          </CardBody>
+        </Card>
+      ),
+    },
+    {
+      label: "Vue",
+      value: "vue",
+      desc: (
+        <Card className="w-full">
+          <CardBody>
+            <Typography variant="h5" color="blue-gray" className="mb-2">
+              UI/UX Review Check
+            </Typography>
+            <Typography>
+              The place is close to Barceloneta Beach and bus stop just 2 min by
+              walk and near to &quot;Naviglio&quot; where you can enjoy the main
+              night life in Barcelona.
+            </Typography>
+          </CardBody>
+        </Card>
+      ),
+    },
+    {
+      label: "Angular",
+      value: "angular",
+      desc: (
+        <Card className="w-full">
+          <CardBody>
+            <Typography variant="h5" color="blue-gray" className="mb-2">
+              UI/UX Review Check
+            </Typography>
+            <Typography>
+              The place is close to Barceloneta Beach and bus stop just 2 min by
+              walk and near to &quot;Naviglio&quot; where you can enjoy the main
+              night life in Barcelona.
+            </Typography>
+          </CardBody>
+        </Card>
+      ),
+    },
+    {
+      label: "Svelte",
+      value: "svelte",
+      desc: (
+        <Card className="w-full">
+          <CardBody>
+            <Typography variant="h5" color="blue-gray" className="mb-2">
+              UI/UX Review Check
+            </Typography>
+            <Typography>
+              The place is close to Barceloneta Beach and bus stop just 2 min by
+              walk and near to &quot;Naviglio&quot; where you can enjoy the main
+              night life in Barcelona.
+            </Typography>
+          </CardBody>
+        </Card>
+      ),
+    },
+  ];
   return (
     <div className="flex flex-col items-center">
       <Card
@@ -70,7 +167,27 @@ export default function Profile() {
           </div>
         </CardBody>
       </Card>
-      <Button size="lg" color="blue" className="my-3 w-3/4 md:w-1/2">Edit Profile</Button>
+      <Button size="lg" color="blue" className="my-3 w-3/4 md:w-1/2">
+        Edit Profile
+      </Button>
+      <div className="flex">
+        <Tabs value="html">
+          <TabsHeader>
+            {data.map(({ label, value }) => (
+              <Tab key={value} value={value}>
+                {label}
+              </Tab>
+            ))}
+          </TabsHeader>
+          <TabsBody>
+            {data.map(({ value, desc }) => (
+              <TabPanel key={value} value={value}>
+                {desc}
+              </TabPanel>
+            ))}
+          </TabsBody>
+        </Tabs>
+      </div>
     </div>
   );
 }
