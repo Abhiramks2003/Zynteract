@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const FooterMenu = () => {
   return (
-    <footer className="w-full bottom-0 border-t-2 sticky p-2 bg-white flex md:hidden justify-around items-center">
+    <footer className="w-full bottom-0 border-t-2 fixed p-2 bg-white flex md:hidden justify-around items-center">
       <Link to="/">
         <GoHome size={25} />
       </Link>
