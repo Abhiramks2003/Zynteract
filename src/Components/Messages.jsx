@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Card,
   CardBody,
@@ -12,7 +13,6 @@ import {
 } from "@material-tailwind/react";
 import { TbEdit } from "react-icons/tb";
 import { CiSearch } from "react-icons/ci";
-import React from "react";
 
 const Messages = () => {
   const [activeTab, setActiveTab] = React.useState("html");
@@ -79,10 +79,10 @@ const Messages = () => {
 
         <Tabs value={activeTab}>
           <TabsHeader
-            className="rounded-none border-b border-blue-gray-50 bg-transparent p-0 my-2"
+            className="rounded-none border-b border-blue-gray-50 bg-transparent p-0 mt-2"
             indicatorProps={{
               className:
-                "bg-transparent border-b-2 border-gray-900 shadow-none rounded-none",
+                "bg-transparent border-b-2 border-blue-500 shadow-none rounded-none",
             }}
           >
             {data.map(({ label, value }) => (
@@ -90,7 +90,11 @@ const Messages = () => {
                 key={value}
                 value={value}
                 onClick={() => setActiveTab(value)}
-                className={activeTab === value ? "text-gray-900" : ""}
+                className={
+                  activeTab === value
+                    ? "text-blue-500 font-semibold"
+                    : "text-gray-500"
+                }
               >
                 {label}
               </Tab>

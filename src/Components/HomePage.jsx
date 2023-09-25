@@ -2,7 +2,7 @@ import "../App.css";
 import Activity from "./Activity";
 import Messages from "./Messages";
 import Posts from "./Posts";
-import Stories from "./Stories";
+import Story from "./Story";
 export default function HomePage() {
   const arr = Array.from({ length: 20 }, () => Math.floor(Math.random() * 100));
   return (
@@ -11,7 +11,7 @@ export default function HomePage() {
         <Activity />
       </div>
       <div className="flex flex-col justify-start items-center w-full md:w-[600px] flex-shrink-0 h-full md:h-[600px] scroll-post">
-        <Stories />
+        <Story />
         {arr.map((a, index) => (
           <Posts key={index} />
         ))}

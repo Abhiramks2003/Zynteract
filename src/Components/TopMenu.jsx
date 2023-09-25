@@ -11,9 +11,10 @@ import {
   DialogFooter,
 } from "@material-tailwind/react";
 
-import { CiSearch } from "react-icons/ci";
-import { MdOutlineAddBox, MdOutlineVideocam } from "react-icons/md";
+import { CiSearch, CiGlobe } from "react-icons/ci";
+import { MdOutlineAddBox } from "react-icons/md";
 import ProfileMenu from "./ProfileMenu";
+import { Link } from "react-router-dom";
 
 const TopMenu = () => {
   const [open, setOpen] = React.useState(false);
@@ -23,13 +24,19 @@ const TopMenu = () => {
     <>
       <Navbar fullWidth className="mx-auto py-2.5 px-4">
         <div className="container mx-auto flex gap-2 items-center justify-between text-blue-gray-900">
-          <Typography variant="h4" className="whitespace-nowrap -ml-4">
-            Zynteract
-          </Typography>
+          <Link to="/">
+            <Typography
+              type="button"
+              variant="h4"
+              className="whitespace-nowrap -ml-4"
+            >
+              Zynteract
+            </Typography>
+          </Link>
           <div className="w-96 hidden md:block">
             <Input
               color="blue"
-              label="Input With Icon"
+              label="Explore"
               icon={
                 <CiSearch
                   type="button"
@@ -42,7 +49,7 @@ const TopMenu = () => {
           <div className="flex gap-3 items-center">
             <IconButton
               onClick={handleOpen}
-              className="rounded-full bg-gray-500"
+              className="rounded-full bg-blue-500"
             >
               <MdOutlineAddBox size={24} />
             </IconButton>
@@ -69,8 +76,10 @@ const TopMenu = () => {
                 </Button>
               </DialogFooter>
             </Dialog>
-            <IconButton className="rounded-full bg-gray-500 hidden md:block">
-              <MdOutlineVideocam size={24} />
+            <IconButton className="rounded-full bg-blue-500 hidden md:block">
+              <Link to="/explore">
+                <CiGlobe size={24} />
+              </Link>
             </IconButton>
             <ProfileMenu />
           </div>

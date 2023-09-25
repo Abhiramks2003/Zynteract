@@ -10,7 +10,9 @@ const FooterMenu = () => {
       <Link to="/">
         <GoHome size={25} />
       </Link>
-      <FiSearch size={25} />
+      <Link to='/explore'>
+        <FiSearch size={25} />
+      </Link>
       <Link to="/messages">
         <BiMessageSquare size={25} />
       </Link>
