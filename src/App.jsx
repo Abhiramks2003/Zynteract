@@ -10,12 +10,10 @@ import Profile from "./Profile";
 import Auth from "./Authentication/Auth";
 
 function App() {
-  const currentPath = localStorage.getItem("currentpath");
-
   return (
     <div className="m-0 p-0">
       <Router>
-        {currentPath !== "/authentication" && <TopMenu />}
+        <TopMenu />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/authentication" element={<Auth />} />
