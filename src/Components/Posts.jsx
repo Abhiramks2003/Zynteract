@@ -84,7 +84,7 @@ export default function Posts() {
               >
                 <FaRegComment size={24} className=" " />
               </IconButton>
-              <Dialog size="xl" open={open} handler={handleOpen}>
+              <Dialog size="xl"  open={open} handler={handleOpen}>
                 <DialogHeader>Its a simple dialog.</DialogHeader>
                 <DialogBody divider>
                   The key to more success is to have a lot of pillows. Put it

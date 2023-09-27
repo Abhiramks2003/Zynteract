@@ -14,6 +14,9 @@ import {
 } from "@material-tailwind/react";
 
 export default function Profile() {
+  const base64Data = localStorage.getItem("image");
+  const mimetype = localStorage.getItem("imgtype");
+  const name = localStorage.getItem("name");
   const data = [
     {
       label: "HTML",
@@ -110,7 +113,7 @@ export default function Profile() {
     <div className="flex flex-col items-center">
       <Card
         shadow={false}
-        className="relative mt-1 flex justify-end h-96 w-full overflow-hidden text-center"
+        className="relative mt-1 flex justify-end h-72 md:h-96 w-full overflow-hidden text-center"
       >
         <CardHeader
           floated={false}
@@ -126,10 +129,10 @@ export default function Profile() {
             variant="circular"
             alt="tania andrew"
             className="border-2 border-white"
-            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+            src={`data:${mimetype};base64,${base64Data}`}
           />
           <Typography variant="h2" className="mb-4 mt-2 text-gray-400">
-            Tania Andrew
+            {name}
           </Typography>
           <div className="flex justify-around items-center">
             <Chip

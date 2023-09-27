@@ -1,10 +1,15 @@
+import { useLocation } from "react-router-dom";
 import "../App.css";
 import Activity from "./Activity";
 import Messages from "./Messages";
 import Posts from "./Posts";
 import Story from "./Story";
+
 export default function HomePage() {
   const arr = Array.from({ length: 20 }, () => Math.floor(Math.random() * 100));
+  const location = useLocation();
+  const pathName = location.pathname;
+  localStorage.setItem("pathname", '/');
   return (
     <div className="flex justify-evenly">
       <div className="hidden md:flex flex-col items-center w-80 flex-shrink-0 h-96">

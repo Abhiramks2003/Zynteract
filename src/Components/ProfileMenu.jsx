@@ -6,9 +6,16 @@ import {
   Avatar,
   Typography,
 } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ProfileMenu() {
+  const navigate = useNavigate();
+  const base64Data = localStorage.getItem("image");
+  const mimetype = localStorage.getItem("imgtype");
+  const handleSignout = () => {
+    localStorage.clear();
+    navigate("/authentication");
+  };
   return (
     <Menu>
       <MenuHandler>
@@ -16,11 +23,11 @@ export default function ProfileMenu() {
           variant="circular"
           alt="tania andrew"
           className="cursor-pointer ml-6"
-          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+          src={`data:${mimetype};base64,${base64Data}`}
         />
       </MenuHandler>
       <MenuList>
-        <Link to='/profile' className="">
+        <Link to="/profile:id" className="">
           <MenuItem className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +74,7 @@ export default function ProfileMenu() {
           </Typography>
         </MenuItem>
         <hr className="my-2 border-blue-gray-50" />
-        <MenuItem className="flex items-center gap-2 ">
+        <MenuItem className="flex items-center gap-2" onClick={handleSignout}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
