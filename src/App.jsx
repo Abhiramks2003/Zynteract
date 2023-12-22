@@ -8,10 +8,11 @@ import Messages from "./Components/Messages";
 import Explore from "./Components/Explore";
 import Profile from "./Profile";
 import Auth from "./Authentication/Auth";
+import DraggableDiv from "./Components/DraggableDiv";
 
 function App() {
   return (
-    <div className="m-0 p-0">
+    <div className="m-0 p-0 font-poppins">
       <Router>
         <TopMenu />
         <Routes>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/explore" element={<Explore />} />
           <Route path="/activity" element={<Activity />} />
           <Route path="/messages" element={<Messages />} />
+          <Route path="/experiment" element={<DraggableDiv />} />
         </Routes>
         <FooterMenu />
       </Router>

@@ -12,7 +12,7 @@ const Explore = () => {
     <Card className="mt-6 w-full">
       <CardBody>
         <div className="mb-4">
-          <Typography variant="h2" color="blue-gray" className="mb-2">
+          <Typography variant="h2" color="blue-gray" className="mb-2 font-poppins">
             Explore
           </Typography>
           <Input className="" color="blue" label="Input With Icon" icon={<CiSearch type="button" size={24} className="hover:text-blue-500"/>} />

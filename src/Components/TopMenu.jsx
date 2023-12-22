@@ -28,7 +28,7 @@ const TopMenu = () => {
             <Typography
               type="button"
               variant="h4"
-              className="whitespace-nowrap -ml-4"
+              className="whitespace-nowrap font-poppins"
             >
               Zynteract
             </Typography>

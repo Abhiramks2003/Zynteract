@@ -29,7 +29,7 @@ const Messages = () => {
               alt=""
             />
             <div>
-              <Typography>
+              <Typography variant="h6" className="font-poppins font-extralight">
                 <span className="font-bold">user</span> started following you
               </Typography>
             </div>
@@ -55,7 +55,7 @@ const Messages = () => {
     <Card className="mt-3 w-full md:w-80 h-screen md:h-[85vh] flex flex-col flex-shrink-0">
       <CardBody>  
         <div className="flex justify-between">
-          <Typography variant="h5" color="blue-gray" className="mb-2">
+          <Typography variant="h5" color="blue-gray" className="mb-2 font-poppins">
             Messages
           </Typography>
           <TbEdit type="button" className="hover:text-blue-500" size={25} />
@@ -79,10 +79,10 @@ const Messages = () => {
 
         <Tabs value={activeTab}>
           <TabsHeader
-            className="rounded-none border-b border-blue-gray-50 bg-transparent p-0 mt-2"
+            className="rounded-none border-b font-poppins border-blue-gray-50 bg-transparent p-0 mt-2"
             indicatorProps={{
               className:
-                "bg-transparent border-b-2 border-blue-500 shadow-none rounded-none",
+                "bg-transparent border-b-2 border-blue-500 font-poppins shadow-none rounded-none",
             }}
           >
             {data.map(({ label, value }) => (
@@ -92,8 +92,8 @@ const Messages = () => {
                 onClick={() => setActiveTab(value)}
                 className={
                   activeTab === value
-                    ? "text-blue-500 font-semibold"
-                    : "text-gray-500"
+                    ? "text-blue-500 font-semibold font-poppins"
+                    : "text-gray-500 font-poppins"
                 }
               >
                 {label}
@@ -102,7 +102,7 @@ const Messages = () => {
           </TabsHeader>
           <TabsBody>
             {data.map(({ value, desc }) => (
-              <TabPanel key={value} value={value}>
+              <TabPanel key={value} value={value} className="font-poppins">
                 {desc}
               </TabPanel>
             ))}

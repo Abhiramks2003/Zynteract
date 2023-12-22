@@ -1,10 +1,10 @@
 import React from "react";
 import {
-  Navbar, Avatar,
+  Navbar,
+  Avatar,
   Dialog,
   DialogBody,
-  DialogFooter,
-  Button
+  Carousel,
 } from "@material-tailwind/react";
 import "../App.css";
 
@@ -40,21 +40,32 @@ export default function Story() {
         ))}
         <Dialog open={open} handler={handleOpen}>
           <DialogBody divider>
-
-          </DialogBody>
-          <DialogFooter>
-            <Button
-              variant="text"
-              color="red"
-              onClick={handleOpen}
-              className="mr-1"
+            <Carousel
+              className="rounded-xl bg-black"
+              navigation={({ setActiveIndex, activeIndex, length }) => (
+                <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+                  {new Array(length).fill("").map((_, i) => (
+                    <span
+                      key={i}
+                      className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
+                        activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
+                      }`}
+                      onClick={() => setActiveIndex(i)}
+                    />
+                  ))}
+                </div>
+              )}
             >
-              <span>Cancel</span>
-            </Button>
-            <Button variant="gradient" color="green" onClick={handleOpen}>
-              <span>Confirm</span>
-            </Button>
-          </DialogFooter>
+              {arr.map((value, index) => (
+                <img
+                  key={index}
+                  src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+                  alt={`image-${value+1}`}
+                  className="h-full w-full object-cover"
+                />
+              ))}
+            </Carousel>
+          </DialogBody>
         </Dialog>
       </div>
     </Navbar>
