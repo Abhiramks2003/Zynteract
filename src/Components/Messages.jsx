@@ -58,7 +58,7 @@ const Messages = () => {
           <Typography variant="h5" color="blue-gray" className="mb-2 font-poppins">
             Messages
           </Typography>
-          <TbEdit type="button" className="hover:text-blue-500" size={25} />
+          <TbEdit type="button" className="hover:text-blue-500 cursor-pointer" size={25} />
         </div>
 
         <div className="flex flex-col my-2">
@@ -69,7 +69,7 @@ const Messages = () => {
               icon={
                 <CiSearch
                   type="button"
-                  className="hover:text-blue-500"
+                  className="hover:text-blue-500 cursor-pointer"
                   size={24}
                 />
               }
