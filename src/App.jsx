@@ -9,6 +9,7 @@ import Explore from "./Components/Explore";
 import Profile from "./Profile";
 import Auth from "./Authentication/Auth";
 import DraggableDiv from "./Components/DraggableDiv";
+import Chat from "./Components/Chat";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/explore" element={<Explore />} />
           <Route path="/activity" element={<Activity />} />
           <Route path="/messages" element={<Messages />} />
+          <Route path="/chat" element={<Chat />} />
           <Route path="/experiment" element={<DraggableDiv />} />
         </Routes>
         <FooterMenu />

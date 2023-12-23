@@ -10,35 +10,65 @@ import {
   TabsBody,
   Tab,
   TabPanel,
+  List,
+  ListItem,
+  ListItemPrefix,
 } from "@material-tailwind/react";
 import { TbEdit } from "react-icons/tb";
 import { CiSearch } from "react-icons/ci";
+import "../App.css";
+import { useNavigate } from "react-router-dom";
 
 const Messages = () => {
   const [activeTab, setActiveTab] = React.useState("html");
+  let arr = Array.from({ length: 20 }, (_, index) => index + 1);
+  const navigate = useNavigate();
   const data = [
     {
       label: "Primary",
       value: "html",
       desc: (
-        <div className="flex flex-col">
-          <div className="flex items-center gap-1 my-3">
-            <Avatar
-              src="/img/face-2.jpg"
-              className="bg-blue-500 flex-shrink-0"
-              alt=""
-            />
-            <div>
-              <Typography variant="h6" className="font-poppins font-extralight">
-                <span className="font-bold">user</span> started following you
-              </Typography>
-            </div>
-          </div>
+        <div className="flex flex-col -mx-4 overflow-y-scroll h-fit md:h-[22.5rem]">
+          <List className="">
+            {arr.map((a, index) => (
+              <ListItem
+                onClick={() => {
+                  navigate("/chat", { state: { a } });
+                }}
+                key={index}
+                className="w-full"
+              >
+                <ListItemPrefix>
+                  <Avatar
+                    variant="circular"
+                    alt="candice"
+                    src="https://docs.material-tailwind.com/img/face-1.jpg"
+                  />
+                </ListItemPrefix>
+                <div>
+                  <Typography
+                    className="font-poppins"
+                    variant="h6"
+                    color="blue-gray"
+                  >
+                    Tania Andrew
+                  </Typography>
+                  <Typography
+                    variant="small"
+                    color="gray"
+                    className="font-normal font-poppins"
+                  >
+                    Software Engineer
+                  </Typography>
+                </div>
+              </ListItem>
+            ))}
+          </List>
         </div>
       ),
     },
     {
-      label: "General",
+      label: "Groups",
       value: "react",
       desc: `Because it's about motivating the doers. Because I'm here
         to follow my dreams and inspire other people to follow their dreams, too.`,
@@ -52,18 +82,27 @@ const Messages = () => {
     },
   ];
   return (
-    <Card className="mt-3 w-full md:w-80 h-screen md:h-[85vh] flex flex-col flex-shrink-0">
-      <CardBody>  
+    <Card className="mt-3 w-full md:w-80 h-full md:h-[85vh] flex flex-col flex-shrink-0">
+      <CardBody className="">
         <div className="flex justify-between">
-          <Typography variant="h5" color="blue-gray" className="mb-2 font-poppins">
+          <Typography
+            variant="h5"
+            color="blue-gray"
+            className="mb-2 font-poppins"
+          >
             Messages
           </Typography>
-          <TbEdit type="button" className="hover:text-blue-500 cursor-pointer" size={25} />
+          <TbEdit
+            type="button"
+            className="hover:text-blue-500 cursor-pointer"
+            size={25}
+          />
         </div>
 
         <div className="flex flex-col my-2">
-          <div className="">
+          <div>
             <Input
+              className="font-poppins"
               color="blue"
               label="Search messages"
               icon={
@@ -93,14 +132,14 @@ const Messages = () => {
                 className={
                   activeTab === value
                     ? "text-blue-500 font-semibold font-poppins"
-                    : "text-gray-500 font-poppins"
+                    : "text-gray-500 font-poppins hover:text-gray-600"
                 }
               >
                 {label}
               </Tab>
             ))}
           </TabsHeader>
-          <TabsBody>
+          <TabsBody className="w-full">
             {data.map(({ value, desc }) => (
               <TabPanel key={value} value={value} className="font-poppins">
                 {desc}

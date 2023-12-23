@@ -8,7 +8,7 @@ const Activity = () => {
           <Typography variant="h5" color="blue-gray" className="mb-2 font-poppins">
             Activity
           </Typography>
-          <Typography type="button" variant="h6" color="gray" className="mb-2 font-poppins">
+          <Typography type="button" variant="h6" color="gray" className="mb-2 font-poppins hover:text-blue-500 cursor-pointer">
             See all
           </Typography>
         </div>

@@ -198,7 +198,7 @@ export default function Posts() {
               <BsFillBookmarkFill size={24} />
             </IconButton>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 w-fit p-1 rounded-lg hover:bg-gray-100">
             <div className="flex items-center -space-x-2">
               <Avatar
                 size="xs"

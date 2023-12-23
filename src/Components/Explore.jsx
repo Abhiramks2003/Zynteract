@@ -9,13 +9,10 @@ import { CiSearch } from "react-icons/ci";
 const Explore = () => {
   const arr = Array.from({ length: 20 }, () => Math.floor(Math.random() * 100));
   return (
-    <Card className="mt-6 w-full">
+    <Card className="w-full">
       <CardBody>
-        <div className="mb-4">
-          <Typography variant="h2" color="blue-gray" className="mb-2 font-poppins">
-            Explore
-          </Typography>
-          <Input className="" color="blue" label="Input With Icon" icon={<CiSearch type="button" size={24} className="hover:text-blue-500"/>} />
+        <div className="mb-4 md:hidden">
+          <Input size="lg" className="" color="blue" label="Explore" icon={<CiSearch type="button" size={24} className="hover:text-blue-500"/>} />
         </div>
         <div className="grid grid-cols-3 md:grid-cols-4 gap-2 mt-3">
           {arr.map((a, index) => (

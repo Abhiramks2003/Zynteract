@@ -13,3 +13,7 @@
 .scroll-post::-webkit-scrollbar {
     display: none;
 }
+
+.message-scroll {
+    overflow-y: scroll;
+}
