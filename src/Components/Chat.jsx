@@ -27,40 +27,42 @@ const Chat = () => {
       </div>
       <div className="w-full my-1 h-[86vh]">
         <div className="flex items-center justify-between md:mx-8 my-2 border-b-2">
-          <IconButton
-            variant="text"
-            className="rounded-full -mr-12 block md:hidden"
-          >
-            <Link to="/messages">
-              <BsChevronLeft size={25} className="" />
-            </Link>
-          </IconButton>
-          <div className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100">
-            <Badge
-              color="green"
-              withBorder
-              overlap="circular"
-              placement="bottom-end"
+          <div className="flex items-center">
+            <IconButton
+              variant="text"
+              className="rounded-full block md:hidden"
             >
-              <Avatar
-                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
-                alt="profile picture"
-              />
-            </Badge>
-            <div>
-              <Typography variant="h6" className="font-poppins">
-                Tania Andrew
-              </Typography>
-              <Typography
-                variant="small"
-                color="gray"
-                className="font-normal font-poppins"
+              <Link to="/messages">
+                <BsChevronLeft size={25} className="" />
+              </Link>
+            </IconButton>
+
+            <div className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100">
+              <Badge
+                color="green"
+                withBorder
+                overlap="circular"
+                placement="bottom-end"
               >
-                Web Developer
-              </Typography>
+                <Avatar
+                  src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+                  alt="profile picture"
+                />
+              </Badge>
+              <div>
+                <Typography variant="h6" className="font-poppins">
+                  Tania Andrew
+                </Typography>
+                <Typography
+                  variant="small"
+                  color="gray"
+                  className="font-normal font-poppins"
+                >
+                  Web Developer
+                </Typography>
+              </div>
             </div>
           </div>
-
           <div className="flex items-center md:gap-4">
             <Menu placement="bottom-end">
               <MenuHandler>
