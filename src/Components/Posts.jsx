@@ -186,7 +186,7 @@ export default function Posts() {
                             Web Developer
                           </Typography>
                         </div>
-                      </div> // Use 'key' to provide a unique identifier
+                      </div> 
                   ))}
                 </div>
               </Drawer>

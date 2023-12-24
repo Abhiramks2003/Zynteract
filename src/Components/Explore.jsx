@@ -2,7 +2,6 @@ import {
   Card,
   CardHeader,
   CardBody,
-  Typography,
   Input,
 } from "@material-tailwind/react";
 import { CiSearch } from "react-icons/ci";

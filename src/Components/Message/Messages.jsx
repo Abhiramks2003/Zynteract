@@ -4,78 +4,36 @@ import {
   CardBody,
   Typography,
   Input,
-  Avatar,
   Tabs,
   TabsHeader,
   TabsBody,
   Tab,
   TabPanel,
-  List,
-  ListItem,
-  ListItemPrefix,
+  IconButton
 } from "@material-tailwind/react";
 import { TbEdit } from "react-icons/tb";
 import { CiSearch } from "react-icons/ci";
-import "../App.css";
-import { useNavigate } from "react-router-dom";
+import Primary from "./Primary";
 
 const Messages = () => {
-  const [activeTab, setActiveTab] = React.useState("html");
-  let arr = Array.from({ length: 20 }, (_, index) => index + 1);
-  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = React.useState("primary");
   const data = [
     {
       label: "Primary",
-      value: "html",
+      value: "primary",
       desc: (
-        <div className="flex flex-col -mx-4 overflow-y-scroll h-fit md:h-[22.5rem]">
-          <List className="">
-            {arr.map((a, index) => (
-              <ListItem
-                onClick={() => {
-                  navigate("/chat", { state: { a } });
-                }}
-                key={index}
-                className="w-full"
-              >
-                <ListItemPrefix>
-                  <Avatar
-                    variant="circular"
-                    alt="candice"
-                    src="https://docs.material-tailwind.com/img/face-1.jpg"
-                  />
-                </ListItemPrefix>
-                <div>
-                  <Typography
-                    className="font-poppins"
-                    variant="h6"
-                    color="blue-gray"
-                  >
-                    Tania Andrew
-                  </Typography>
-                  <Typography
-                    variant="small"
-                    color="gray"
-                    className="font-normal font-poppins"
-                  >
-                    Software Engineer
-                  </Typography>
-                </div>
-              </ListItem>
-            ))}
-          </List>
-        </div>
+        <Primary />
       ),
     },
     {
       label: "Groups",
-      value: "react",
+      value: "groups",
       desc: `Because it's about motivating the doers. Because I'm here
         to follow my dreams and inspire other people to follow their dreams, too.`,
     },
     {
       label: "Calls",
-      value: "vue",
+      value: "calls",
       desc: `We're not always in the position that we want to be at.
         We're constantly growing. We're constantly making mistakes. We're
         constantly trying to express ourselves and actualize our dreams.`,
@@ -92,11 +50,13 @@ const Messages = () => {
           >
             Messages
           </Typography>
-          <TbEdit
-            type="button"
-            className="hover:text-blue-500 cursor-pointer"
-            size={25}
-          />
+          <IconButton variant="text" className="rounded-full">
+            <TbEdit
+              type="button"
+              className="hover:text-blue-500 cursor-pointer"
+              size={25}
+            />
+          </IconButton>
         </div>
 
         <div className="flex flex-col my-2">

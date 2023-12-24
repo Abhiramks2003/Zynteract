@@ -1,4 +1,4 @@
-import Messages from "./Messages";
+import Messages from "./Message/Messages";
 import {
   Badge,
   Typography,
@@ -22,7 +22,7 @@ const Chat = () => {
 
   return (
     <div className="flex justify-evenly overflow-hidden">
-      <div className="hidden md:flex flex-col items-center flex-shrink-0 h-96">
+      <div className="hidden w-80 mx-7 md:flex flex-col items-center flex-shrink-0 h-96">
         <Messages />
       </div>
       <div className="w-full my-1 h-[86vh]">
@@ -33,7 +33,7 @@ const Chat = () => {
               className="rounded-full block md:hidden"
             >
               <Link to="/messages">
-                <BsChevronLeft size={25} className="" />
+                <BsChevronLeft size={25}/>
               </Link>
             </IconButton>
 

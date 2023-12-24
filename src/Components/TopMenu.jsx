@@ -22,7 +22,7 @@ const TopMenu = () => {
   const handleOpen = () => setOpen(!open);
   return (
     <>
-      <Navbar fullWidth className="mx-auto py-2.5 px-4">
+      <Navbar fullWidth className="mx-auto py-1.5 px-4">
         <div className="container mx-auto flex gap-2 items-center justify-between text-blue-gray-900">
           <Link to="/">
             <Typography

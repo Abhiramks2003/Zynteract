@@ -4,7 +4,7 @@ import HomePage from "./Components/HomePage";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Activity from "./Components/Activity";
 import FooterMenu from "./Components/FooterMenu";
-import Messages from "./Components/Messages";
+import Messages from "./Components/Message/Messages";
 import Explore from "./Components/Explore";
 import Profile from "./Profile";
 import Auth from "./Authentication/Auth";
@@ -13,7 +13,7 @@ import Chat from "./Components/Chat";
 
 function App() {
   return (
-    <div className="m-0 p-0 font-poppins">
+    <div className="m-0 p-0 overflow-hidden font-poppins">
       <Router>
         <TopMenu />
         <Routes>
