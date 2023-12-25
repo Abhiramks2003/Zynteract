@@ -20,11 +20,11 @@ const Chat = () => {
   const location = useLocation();
   const { a } = location.state || {};
   return (
-    <div className="flex justify-evenly overflow-hidden">
-      <div className="hidden w-80 mx-7 md:flex flex-col items-center flex-shrink-0 h-96">
+    <div className="flex justify-evenly overflow-hidden ">
+      <div className="hidden w-80 mx-8 md:flex flex-col items-center flex-shrink-0 h-96">
         <Messages />
       </div>
-      <div className="w-full my-1 h-[86vh]">
+      <div className="w-full md:my-1 h-screen md:h-full">
         <div className="flex items-center justify-between md:mx-8 my-2 border-b-2">
           <div className="flex items-center">
             <IconButton
@@ -106,7 +106,7 @@ const Chat = () => {
           </div>
         </div>
 
-        <div className="overflow-y-scroll flex flex-col items-center h-screen md:h-[75vh] bg-gray-200">
+        <div className="overflow-y-scroll flex flex-col items-center h-full md:h-[75vh]">
           <Chip
             variant="outlined"
             value="01 January 2024"

@@ -2,8 +2,8 @@ import { Card, CardBody, Typography, Avatar } from "@material-tailwind/react";
 
 const Activity = () => {
   return (
-    <Card className="mt-3 w-full md:w-80 h-screen md:h-[85vh] flex flex-col flex-shrink-0 font-poppins">
-      <CardBody>
+    <Card className="mt-1 md:mt-3 w-full md:w-80 h-screen md:h-[85vh] flex flex-col flex-shrink-0 font-poppins">
+      <CardBody className="p-4">
         <div className="flex justify-between">
           <Typography variant="h5" color="blue-gray" className="mb-2 font-poppins">
             Activity

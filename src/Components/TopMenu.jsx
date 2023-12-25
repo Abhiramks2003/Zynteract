@@ -21,9 +21,16 @@ const TopMenu = () => {
 
   const handleOpen = () => setOpen(!open);
   const location = useLocation();
+  let currentRoute = location.pathname.split(":")[0];
+  let routesArray = ["/", "/profile:id","/activity"];
   return (
     <>
-      <Navbar fullWidth className="mx-auto py-1.5 px-4">
+      <Navbar
+        fullWidth
+        className={`mx-auto py-1.5 px-4 ${
+          routesArray.includes(currentRoute) ? "block" : "hidden"
+        } md:block`}
+      >
         <div className="container mx-auto flex gap-2 items-center justify-between text-blue-gray-900">
           <Link to="/">
             <Typography
@@ -35,7 +42,11 @@ const TopMenu = () => {
             </Typography>
           </Link>
           <div
-            className={`w-96 hidden md:${location.pathname.split(':')[0] === "/profile" ? "hidden" : "block"}`}
+            className={`w-96 hidden md:${
+              location.pathname.split(":")[0] === "/profile"
+                ? "hidden"
+                : "block"
+            }`}
           >
             <Input
               color="blue"

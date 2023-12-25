@@ -40,8 +40,8 @@ const Messages = () => {
     },
   ];
   return (
-    <Card className="mt-3 w-full md:w-80 h-full md:h-[85vh] flex flex-col flex-shrink-0">
-      <CardBody className="">
+    <Card className="md:mt-3 w-full md:w-80 h-screen md:h-[85vh] flex flex-col flex-shrink-0">
+      <CardBody className="p-4 h-screen">
         <div className="flex justify-between">
           <Typography
             variant="h5"
@@ -75,8 +75,7 @@ const Messages = () => {
             />
           </div>
         </div>
-
-        <Tabs value={activeTab}>
+        <Tabs className="h-full" value={activeTab}>
           <TabsHeader
             className="rounded-none border-b font-poppins border-blue-gray-50 bg-transparent p-0 mt-2"
             indicatorProps={{
@@ -99,9 +98,9 @@ const Messages = () => {
               </Tab>
             ))}
           </TabsHeader>
-          <TabsBody className="w-full">
+          <TabsBody className="w-full h-full">
             {data.map(({ value, desc }) => (
-              <TabPanel key={value} value={value} className="font-poppins">
+              <TabPanel key={value} value={value} className="font-poppins  h-full">
                 {desc}
               </TabPanel>
             ))}
