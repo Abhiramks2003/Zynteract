@@ -14,12 +14,13 @@ import {
 import { CiSearch, CiGlobe } from "react-icons/ci";
 import { MdOutlineAddBox } from "react-icons/md";
 import ProfileMenu from "./ProfileMenu";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const TopMenu = () => {
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(!open);
+  const location = useLocation();
   return (
     <>
       <Navbar fullWidth className="mx-auto py-1.5 px-4">
@@ -33,7 +34,9 @@ const TopMenu = () => {
               Zynteract
             </Typography>
           </Link>
-          <div className="w-96 hidden md:block">
+          <div
+            className={`w-96 hidden md:${location.pathname.split(':')[0] === "/profile" ? "hidden" : "block"}`}
+          >
             <Input
               color="blue"
               label="Explore"

@@ -27,7 +27,7 @@ export default function Story() {
         {arr.map((a, index) => (
           <>
             <Avatar
-              key={index}
+              key={`story_${index}`}
               src="/img/face-2.jpg"
               color="blue"
               alt="avatar"

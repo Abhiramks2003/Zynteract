@@ -24,12 +24,14 @@ import {
 import { FaRegComment, FaShare } from "react-icons/fa";
 import "../App.css";
 
-export default function Posts() {
+export default function Posts({ data }) {
   const [open, setOpen] = React.useState(false);
   const [openBottom, setOpenBottom] = React.useState(false);
   const handleOpen = () => setOpen(!open);
   const openDrawerBottom = () => setOpenBottom(true);
   const closeDrawerBottom = () => setOpenBottom(false);
+  const { images, userImage, userid, location } = data;
+
   return (
     <>
       <Card className="w-full flex-shrink-0 mb-4 border-2">
@@ -37,18 +39,18 @@ export default function Posts() {
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4 py-1 bg-transparent">
               <Avatar
-                src="/img/face-2.jpg"
+                src={`data:${userImage[0].mimetype};base64,${userImage[0].data}`}
                 className="bg-red-500"
                 alt="avatar"
               />
-              <div>
-                <Typography variant="h6" className="font-poppins">Tania Andrew</Typography>
+              <div className="flex flex-col items-start">
+                <Typography variant="h6" className="font-poppins">{userid}</Typography>
                 <Typography
                   variant="small"
                   color="gray"
                   className="font-normal font-poppins"
                 >
-                  Web Developer
+                  {location}
                 </Typography>
               </div>
             </div>
@@ -70,7 +72,7 @@ export default function Posts() {
               </MenuList>
             </Menu>
           </div>
-          <iframe src="" className="w-full h-96 my-2 bg-black rounded-md" />
+          <img src={`data:${images[0].mimetype};base64,${images[0].data}`} className="w-full h-96 object-cover my-2 bg-black rounded-md" />
           <div className="flex justify-between items-center">
             <div className="flex gap-1">
               <IconButton
@@ -174,19 +176,19 @@ export default function Posts() {
                 </div>
                 <div>
                   {Array.from({ length: 10 }, (_, index) => (
-                      <div key={index} className="flex items-center gap-4">
-                        <Avatar src="/img/face-2.jpg" alt="avatar" />
-                        <div>
-                          <Typography variant="h6">Tania Andrew</Typography>
-                          <Typography
-                            variant="small"
-                            color="gray"
-                            className="font-normal"
-                          >
-                            Web Developer
-                          </Typography>
-                        </div>
-                      </div> 
+                    <div key={index} className="flex items-center gap-4">
+                      <Avatar src="/img/face-2.jpg" alt="avatar" />
+                      <div>
+                        <Typography variant="h6">Tania Andrew</Typography>
+                        <Typography
+                          variant="small"
+                          color="gray"
+                          className="font-normal"
+                        >
+                          Web Developer
+                        </Typography>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </Drawer>

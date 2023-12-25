@@ -19,7 +19,6 @@ import { useLocation, Link } from "react-router-dom";
 const Chat = () => {
   const location = useLocation();
   const { a } = location.state || {};
-
   return (
     <div className="flex justify-evenly overflow-hidden">
       <div className="hidden w-80 mx-7 md:flex flex-col items-center flex-shrink-0 h-96">
@@ -37,7 +36,7 @@ const Chat = () => {
               </Link>
             </IconButton>
 
-            <div className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100">
+            <div className="flex items-center gap-4 p-0.5 md:p-2 rounded-lg hover:bg-gray-100">
               <Badge
                 color="green"
                 withBorder
@@ -50,7 +49,7 @@ const Chat = () => {
                 />
               </Badge>
               <div>
-                <Typography variant="h6" className="font-poppins">
+                <Typography variant="small" className="font-poppins font-bold md:text-xl">
                   Tania Andrew
                 </Typography>
                 <Typography
@@ -58,7 +57,7 @@ const Chat = () => {
                   color="gray"
                   className="font-normal font-poppins"
                 >
-                  Web Developer
+                  Online
                 </Typography>
               </div>
             </div>

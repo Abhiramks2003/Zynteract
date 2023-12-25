@@ -33,11 +33,11 @@ export default function HomePage() {
       <div className="hidden md:flex flex-col items-center w-80 flex-shrink-0">
         <Messages />
       </div>
-      
+
       <div className="flex flex-col justify-start items-center w-full md:w-[600px] flex-shrink-0 h-full md:h-[87vh] scroll-post">
         <Story />
-        {arr.map((a, index) => (
-          <Posts key={index} />
+        {postData.map((data, index) => (
+          <Posts key={index} data={data} />
         ))}
       </div>
       <div className="hidden md:flex flex-col items-center w-80 flex-shrink-0">

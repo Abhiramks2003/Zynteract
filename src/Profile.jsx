@@ -5,7 +5,6 @@ import {
   Typography,
   Avatar,
   Chip,
-  Button,
   Tabs,
   TabsHeader,
   TabsBody,
@@ -18,6 +17,7 @@ export default function Profile() {
   const mimetype = localStorage.getItem("imgtype");
   const name = localStorage.getItem("name");
   const userID = localStorage.getItem("userId");
+
   const data = [
     {
       label: "HTML",
@@ -102,8 +102,8 @@ export default function Profile() {
           floated={false}
           shadow={false}
           color="transparent"
-          style={{ background: `url("data:${mimetype};base64,${base64Data}")`}}
-          className="absolute inset-0 m-0 h-full w-full rounded-none bg-cover bg-center"
+          style={{ background: `url("data:${mimetype};base64,${base64Data}")` }}
+          className="absolute inset-0 m-0 h-full w-full rounded-none bg-auto bg-no-repeat"
         >
           <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50" />
         </CardHeader>
@@ -115,10 +115,13 @@ export default function Profile() {
             className="border-2 border-white"
             src={`data:${mimetype};base64,${base64Data}`}
           />
-          <Typography variant="h2" className="mt-2 text-gray-400 font-poppins">
+          <Typography variant="h4" className="mt-2 text-gray-400 font-poppins">
             {userID}
           </Typography>
-          <Typography variant="h6" className="my-2 text-gray-400 font-poppins">
+          <Typography
+            variant="paragraph  "
+            className="my-2 text-gray-400 font-poppins"
+          >
             {name}
           </Typography>
           <div className="flex justify-around items-center">
@@ -145,22 +148,31 @@ export default function Profile() {
             />
           </div>
           <div className="flex justify-around items-center">
-            <Typography color="white" variant="paragraph" className="p-2 ml-5 font-poppins">
+            <Typography
+              color="white"
+              variant="paragraph"
+              className="p-2 ml-5 font-poppins"
+            >
               Posts
             </Typography>
-            <Typography color="white" variant="paragraph" className="p-2 ml-5 font-poppins">
+            <Typography
+              color="white"
+              variant="paragraph"
+              className="p-2 ml-5 font-poppins"
+            >
               Followers
             </Typography>
-            <Typography color="white" variant="paragraph" className="p-2 ml-5 font-poppins">
+            <Typography
+              color="white"
+              variant="paragraph"
+              className="p-2 ml-5 font-poppins"
+            >
               Following
             </Typography>
           </div>
         </CardBody>
       </Card>
-      <Button size="lg" color="blue" className="my-3 w-3/4 md:w-1/2 font-poppins">
-        Edit Profile
-      </Button>
-      <div className="flex">
+      <div className="flex my-1">
         <Tabs value="html">
           <TabsHeader>
             {data.map(({ label, value }) => (
