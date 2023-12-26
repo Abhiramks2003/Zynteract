@@ -55,7 +55,7 @@ export default function Posts({ data }) {
               </div>
             </div>
 
-            <Menu>
+            <Menu placement="bottom-end">
               <MenuHandler>
                 <Button variant="text">
                   <BsThreeDots

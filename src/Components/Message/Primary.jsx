@@ -25,6 +25,7 @@ const Primary = () => {
                             <Avatar
                                 variant="circular"
                                 alt="candice"
+                                className="bg-black"
                                 src="https://docs.material-tailwind.com/img/face-1.jpg"
                             />
                         </ListItemPrefix>

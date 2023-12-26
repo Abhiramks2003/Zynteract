@@ -22,7 +22,7 @@ const TopMenu = () => {
   const handleOpen = () => setOpen(!open);
   const location = useLocation();
   let currentRoute = location.pathname.split(":")[0];
-  let routesArray = ["/", "/profile:id","/activity"];
+  let routesArray = ["/", "/profile:id", "/activity"];
   return (
     <>
       <Navbar
@@ -42,7 +42,7 @@ const TopMenu = () => {
             </Typography>
           </Link>
           <div
-            className={`w-96 hidden md:${
+            className={`w-96 hidden rounded-full md:${
               location.pathname.split(":")[0] === "/profile"
                 ? "hidden"
                 : "block"
@@ -51,6 +51,7 @@ const TopMenu = () => {
             <Input
               color="blue"
               label="Explore"
+              variant="outlined"
               icon={
                 <CiSearch
                   type="button"

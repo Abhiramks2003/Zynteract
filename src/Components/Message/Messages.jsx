@@ -9,11 +9,13 @@ import {
   TabsBody,
   Tab,
   TabPanel,
-  IconButton
+  IconButton,
 } from "@material-tailwind/react";
 import { TbEdit } from "react-icons/tb";
 import { CiSearch } from "react-icons/ci";
+import { IoMdArrowBack } from "react-icons/io";
 import Primary from "./Primary";
+import { Link } from "react-router-dom";
 
 const Messages = () => {
   const [activeTab, setActiveTab] = React.useState("primary");
@@ -21,9 +23,7 @@ const Messages = () => {
     {
       label: "Primary",
       value: "primary",
-      desc: (
-        <Primary />
-      ),
+      desc: <Primary />,
     },
     {
       label: "Groups",
@@ -42,14 +42,25 @@ const Messages = () => {
   return (
     <Card className="md:mt-3 w-full md:w-80 h-screen md:h-[85vh] flex flex-col flex-shrink-0">
       <CardBody className="p-4 h-screen">
-        <div className="flex justify-between">
-          <Typography
-            variant="h5"
-            color="blue-gray"
-            className="mb-2 font-poppins"
-          >
-            Messages
-          </Typography>
+        <div className="flex justify-between items-center">
+          <div className="flex gap-1 items-center">
+            <Link to="/" className="md:hidden">
+              <IconButton variant="text" className="rounded-full">
+                <IoMdArrowBack
+                  type="button"
+                  className="hover:text-blue-500 cursor-pointer"
+                  size={25}
+                />
+              </IconButton>
+            </Link>
+            <Typography
+              variant="h5"
+              color="blue-gray"
+              className="font-poppins"
+            >
+              Messages
+            </Typography>
+          </div>
           <IconButton variant="text" className="rounded-full">
             <TbEdit
               type="button"
@@ -100,7 +111,11 @@ const Messages = () => {
           </TabsHeader>
           <TabsBody className="w-full h-full">
             {data.map(({ value, desc }) => (
-              <TabPanel key={value} value={value} className="font-poppins  h-full">
+              <TabPanel
+                key={value}
+                value={value}
+                className="font-poppins  h-full"
+              >
                 {desc}
               </TabPanel>
             ))}

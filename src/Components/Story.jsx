@@ -34,7 +34,7 @@ export default function Story() {
               size="xl"
               withBorder={true}
               onClick={handleOpen}
-              className="p-0.5 flex-shrink-0"
+              className="p-0.5 flex-shrink-0 cursor-pointer"
             />
           </>
         ))}

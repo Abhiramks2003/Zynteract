@@ -2,11 +2,13 @@ import { GoHome } from "react-icons/go";
 import { BiMessageSquare } from "react-icons/bi";
 import { CiGlobe } from "react-icons/ci";
 import { RiNotification2Line } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const FooterMenu = () => {
+  const location = useLocation();
+  let routeArray = ["/chat", "/messages"];
   return (
-    <footer className="w-full z-10 bottom-0 border-t-2 fixed p-2 bg-white flex md:hidden justify-around items-center">
+    <footer className={`w-full z-10 bottom-0 border-t-2 fixed p-2 bg-white ${routeArray.includes(location.pathname) ? "hidden" : "flex"}  md:hidden justify-around items-center`}>
       <Link to="/">
         <GoHome size={25} />
       </Link>
