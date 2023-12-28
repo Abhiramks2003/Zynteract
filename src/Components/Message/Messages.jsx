@@ -114,7 +114,7 @@ const Messages = () => {
               <TabPanel
                 key={value}
                 value={value}
-                className="font-poppins  h-full"
+                className="font-poppins h-full"
               >
                 {desc}
               </TabPanel>

@@ -8,10 +8,10 @@ import {
 import { useNavigate } from "react-router-dom";
 import "./Message.css"
 const Primary = () => {
-    let arr = Array.from({ length: 40 }, (_, index) => index + 1);
+    let arr = Array.from({ length: 18 }, (_, index) => index + 1);
     const navigate = useNavigate();
     return (
-        <div className="flex flex-col -mx-4 overflow-y-scroll h-full md:h-[22.5rem]">
+        <div className="flex flex-col overflow-y-scroll h-full md:h-[22.5rem]">
             <List>
                 {arr.map((a, index) => (
                     <ListItem

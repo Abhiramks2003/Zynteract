@@ -131,7 +131,7 @@ const Chat = () => {
         >
           <div className="mb-6 flex items-center justify-between">
             <Typography className="font-poppins" variant="h5" color="blue-gray">
-              Material Tailwind
+              Info
             </Typography>
             <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
               <svg
