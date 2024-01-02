@@ -53,11 +53,7 @@ const Messages = () => {
                 />
               </IconButton>
             </Link>
-            <Typography
-              variant="h5"
-              color="blue-gray"
-              className="font-poppins"
-            >
+            <Typography variant="h5" color="blue-gray" className="font-poppins">
               Messages
             </Typography>
           </div>

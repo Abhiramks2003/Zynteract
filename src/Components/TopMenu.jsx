@@ -29,7 +29,7 @@ const TopMenu = () => {
         fullWidth
         className={`mx-auto py-1.5 px-4 ${
           routesArray.includes(currentRoute) ? "block" : "hidden"
-        } md:block`}
+        } md:${currentRoute === "/stories" ? "hidden" : "block"}`}
       >
         <div className="container mx-auto flex gap-2 items-center justify-between text-blue-gray-900">
           <Link to="/">

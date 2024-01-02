@@ -15,10 +15,10 @@ import {
   Drawer,
   Textarea,
 } from "@material-tailwind/react";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { CiSearch, CiVideoOn, CiFaceSmile } from "react-icons/ci";
 import { BsThreeDots, BsTelephone, BsChevronLeft } from "react-icons/bs";
-import { useLocation, Link, useNavigate } from "react-router-dom";
-import { VscSend } from "react-icons/vsc";
+import { VscSend, VscChromeClose } from "react-icons/vsc";
 import { FaPaperclip } from "react-icons/fa6";
 
 const Chat = () => {
@@ -35,6 +35,7 @@ const Chat = () => {
       </div>
       <div className="flex flex-col w-full md:my-1 h-screen md:h-full">
         <div className="flex items-center justify-between md:mx-8 my-2 border-b-2">
+
           <div className="flex items-center">
             <IconButton variant="text" className="rounded-full block md:hidden">
               <Link to="/messages">
@@ -55,7 +56,7 @@ const Chat = () => {
                 placement="bottom-end"
               >
                 <Avatar
-                className="bg-black"
+                  className="bg-black"
                   src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
                   alt="profile picture"
                 />
@@ -77,6 +78,7 @@ const Chat = () => {
               </div>
             </div>
           </div>
+          
           <div className="flex items-center md:gap-4">
             <Menu placement="bottom-end">
               <MenuHandler>
@@ -134,20 +136,7 @@ const Chat = () => {
               Info
             </Typography>
             <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="h-5 w-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <VscChromeClose size={20} />
             </IconButton>
           </div>
         </Drawer>
@@ -174,7 +163,7 @@ const Chat = () => {
             rows={1}
             resize={true}
             placeholder="Your Message"
-            className="min-h-full !border-0 focus:border-transparent  font-poppins"
+            className="min-h-full !border-0 focus:border-transparent font-poppins"
             containerProps={{
               className: "grid h-full font-poppins",
             }}

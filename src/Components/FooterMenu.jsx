@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const FooterMenu = () => {
   const location = useLocation();
-  let routeArray = ["/chat", "/messages"];
+  let routeArray = ["/chat", "/messages", "/stories"];
   return (
     <footer className={`w-full z-10 bottom-0 border-t-2 fixed p-2 bg-white ${routeArray.includes(location.pathname) ? "hidden" : "flex"}  md:hidden justify-around items-center`}>
       <Link to="/">

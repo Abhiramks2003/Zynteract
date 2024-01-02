@@ -4,11 +4,11 @@ import "../App.css";
 import Activity from "./Activity";
 import Messages from "./Message/Messages";
 import Posts from "./Posts";
-import Story from "./Story";
+import StoryList from "./Story/StoryList";
 
 
 export default function HomePage() {
-  const arr = Array.from({ length: 20 }, () => Math.floor(Math.random() * 100));
+  //const arr = Array.from({ length: 20 }, () => Math.floor(Math.random() * 100));
   const [loading, setLoading] = useState(true);
   const [postData, setPostData] = useState([]);
   const getPostItems = async () => {
@@ -35,7 +35,7 @@ export default function HomePage() {
       </div>
 
       <div className="flex flex-col justify-start items-center w-full md:w-[600px] flex-shrink-0 h-full md:h-[87vh] scroll-post">
-        <Story />
+        <StoryList />
         {postData.map((data, index) => (
           <Posts key={index} data={data} />
         ))}

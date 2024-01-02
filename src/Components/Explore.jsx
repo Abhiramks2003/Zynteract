@@ -1,24 +1,31 @@
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Input,
-} from "@material-tailwind/react";
+import { Card, CardHeader, CardBody, Input } from "@material-tailwind/react";
 import { CiSearch } from "react-icons/ci";
+
 const Explore = () => {
   const arr = Array.from({ length: 20 }, () => Math.floor(Math.random() * 100));
   return (
     <Card className="w-full">
       <CardBody>
         <div className="mb-4 md:hidden">
-          <Input size="lg" className="" color="blue" label="Explore" icon={<CiSearch type="button" size={24} className="hover:text-blue-500"/>} />
+          <Input
+            size="lg"
+            color="blue"
+            label="Explore"
+            icon={
+              <CiSearch
+                type="button"
+                size={24}
+                className="hover:text-blue-500"
+              />
+            }
+          />
         </div>
         <div className="grid grid-cols-3 md:grid-cols-4 gap-2 mt-3">
           {arr.map((a, index) => (
             <Card
               key={index}
               shadow={false}
-              className="relative grid h-40 md:h-[28rem] max-w-[28rem] items-end justify-center overflow-hidden text-center"
+              className="relative grid h-40 md:h-[28rem] max-w-[28rem] items-end justify-center overflow-hidden text-center cursor-pointer"
             >
               <CardHeader
                 floated={false}

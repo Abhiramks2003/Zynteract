@@ -20,6 +20,7 @@
     "react-draggable": "^4.4.6",
     "react-icons": "^4.11.0",
     "react-insta-stories": "^2.6.2",
+    "react-player": "^2.14.1",
     "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
